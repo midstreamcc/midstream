@@ -1,0 +1,30 @@
+{
+  "name": "midstream",
+  "version": "0.0.1",
+  "description": "Midstream.cc SDK",
+  "author": "Midstream.cc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midstreamcc/midstream.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.28",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "**/*.+(js|jsx|css|less|scss|ts|tsx|md)": "prettier --write"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
