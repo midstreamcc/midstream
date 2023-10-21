@@ -19,7 +19,12 @@ export class Midstream {
   }
 
   protected async doGet<T>(url: string) {
-    const response = await fetch(`${API_URL}${url}&key=${this.apiKey}`);
+    const response = await fetch(`${API_URL}${url}`, {
+      method: "GET",
+      headers: {
+        "X-API-Key": this.apiKey,
+      },
+    });
     if (!response.ok) throw new Error(response.statusText);
     return await response.json();
   }
@@ -27,4 +32,5 @@ export class Midstream {
   getVideos(page: number = 1) {
     return this.doGet<Video[]>(`/api/orgs/${this.orgId}/videos?page=${page}`);
   }
+  // uploadVideo()
 }
